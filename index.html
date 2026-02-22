@@ -3,15 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Job Application Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind + DaisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <h2 class="text-4xl font-bold">Hello</h2>
+    <header class="max-w-5xl mx-auto space-y-5">
+      <h2 class="text-4xl font-bold">Job Application Tracker</h2>
+      <div class="grid grid-cols-3 gap-6">
+        <div class="bg-gray-200 p-5 rounded-md">
+          <p>Total</p>
+          <p id="total">0</p>
+        </div>
+        <div class="bg-gray-200 p-5 rounded-md">
+          <p>Interview</p>
+          <p id="interview" class="text-green-500">0</p>
+        </div>
+        <div class="bg-gray-200 p-5 rounded-md">
+          <p>Rejected</p>
+          <p id="rejected" class="text-red-500">0</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto space-y-6 mt-5">
+      <h2 class="font-semibold text-xl">Available Jobs</h2>
+
+      <div>
+        <button id="btn-all" class="btn btn-neutral">ALl</button>
+        <button id="btn-interview" class="btn btn-soft">Interview</button>
+        <button id="btn-rejected" class="btn btn-soft">Rejected</button>
+      </div>
+
+      <section>
+        <div class="space-y-3 bg-gray-200 rounded-sm p-5">
+          <h2 class="text-lg font-semibold">Mobile First Corp</h2>
+          <p class="text-gray-500">React Native Developer</p>
+          <p class="text-sm text-gray-500">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
+          <h2 class="font-medium text-sm p-4">Not Applied</h2>
+          <p class="text-sm text-gray-500">
+            Build cross-platform mobile applications using React Native. Work on
+            products used by millions of users worldwide.
+          </p>
+          <div>
+            <button class="btn btn-outline btn-success">Interview</button>
+            <button class="btn btn-outline btn-secondary">Rejected</button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
