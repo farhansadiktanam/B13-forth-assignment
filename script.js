@@ -31,3 +31,27 @@ function updateDashboard() {
     rejectedCard.innerText = rejected;
   }
 }
+
+for (let card of allCards) {
+  const status = card.querySelector(".status-text");
+  const interviewBtn = card.querySelector(".btn-success");
+  const rejectedBtn = card.querySelector(".btn-secondary");
+  const deleteBtn = card.querySelector(".fa-trash-can").parentElement;
+
+  interviewBtn.addEventListener("click", function () {
+    status.innerText = "Interview";
+    status.style.color = "green";
+    updateDashboard();
+  });
+
+  rejectedBtn.addEventListener("click", function () {
+    status.innerText = "Rejected";
+    status.style.color = "red";
+    updateDashboard();
+  });
+
+  deleteBtn.addEventListener("click", function () {
+    card.remove();
+    updateDashboard();
+  });
+}
