@@ -55,3 +55,46 @@ for (let card of allCards) {
     updateDashboard();
   });
 }
+
+btnAll.addEventListener("click", function () {
+  for (let card of allCards) {
+    card.style.display = "block";
+  }
+  btnInterview.classList.remove("btn-primary");
+  btnRejected.classList.remove("btn-primary");
+  btnAll.classList.add("btn-primary");
+});
+
+btnInterview.addEventListener("click", function () {
+  for (let card of allCards) {
+    const status = card.querySelector(".status-text").innerText;
+
+    if (status === "Interview") {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  }
+  btnAll.classList.remove("btn-primary");
+  btnRejected.classList.remove("btn-primary");
+  btnInterview.classList.remove("btn-soft");
+  btnInterview.classList.add("btn-primary");
+});
+
+btnRejected.addEventListener("click", function () {
+  for (let card of allCards) {
+    const status = card.querySelector(".status-text").innerText;
+
+    if (status === "Rejected") {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  }
+  btnInterview.classList.remove("btn-primary");
+  btnAll.classList.remove("btn-primary");
+  btnRejected.classList.remove("btn-soft");
+  btnRejected.classList.add("btn-primary");
+});
+
+updateDashboard();
